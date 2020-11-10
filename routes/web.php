@@ -30,3 +30,10 @@ $router->get("/pakets/{id_paket}", "PaketController@show");
 $router->post("/pakets", "PaketController@store");
 $router->put("/pakets/{id_paket}", "PaketController@update");
 $router->delete("/pakets/{id_paket}", "PaketController@destroy");
+
+// CRUD pada tabel articles
+$router->get('/artikel', 'artikelController@index');
+$router->get('/artikel/{id_artikel}', 'artikelController@show');
+$router->post('/artikel', 'artikelController@store');
+$router->put('/artikel/{id_artikel}', 'artikelController@update');
+$router->delete('/artikel/{id_artikel}', 'artikelController@destroy');
