@@ -24,3 +24,10 @@ $router->post("/login", "AuthController@login");
 $router->get("/user", "UserController@index"); 
 
 // CRUD pada tabel paket
+
+// CRUD pada tabel articles
+$router->get('/artikel', 'artikelController@index');
+$router->get('/artikel/{id_artikel}', 'artikelController@show');
+$router->post('/artikel', 'artikelController@store');
+$router->put('/artikel/{id_artikel}', 'artikelController@update');
+$router->delete('/artikel/{id_artikel}', 'artikelController@destroy');
