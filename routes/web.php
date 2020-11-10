@@ -21,6 +21,12 @@ $router->get('/', function () use ($router) {
 $router->post("/register", "AuthController@register");
 $router->post("/login", "AuthController@login");
 
+// Route untuk mengakses token
 $router->get("/user", "UserController@index"); 
 
 // CRUD pada tabel paket
+$router->get("/pakets", "PaketController@index");
+$router->get("/pakets/{id_paket}", "PaketController@show");
+$router->post("/pakets", "PaketController@store");
+$router->put("/pakets/{id_paket}", "PaketController@update");
+$router->delete("/pakets/{id_paket}", "PaketController@destroy");
