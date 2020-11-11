@@ -15,8 +15,8 @@ class CreateTablePaket extends Migration
     {
         Schema::create('pakets', function (Blueprint $table) {
             $table->increments('id_paket');
+            $table->integer('id_user')->unsigned()->nullable();
             $table->string('jenis_konsultasi');
-            $table->timestamps();
         });
     }
 

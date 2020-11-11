@@ -17,8 +17,12 @@ class PaketModel extends Model implements AuthenticatableContract, AuthorizableC
     protected $primaryKey = 'id_paket';
     public $timestamps = false;
 
-    public function user(){
-        return $this->belongsTo('users::class');
+    protected $fillable = [
+        'id_user','jenis_konsultasi'
+    ];
+
+    public function users(){
+        return $this->belongsTo('users');
     }
  
 }

@@ -24,4 +24,9 @@ class UserModel extends Model implements AuthenticatableContract, AuthorizableCo
     protected $hidden = [
         'password_user',
     ];
+
+    public function pakets(){
+        return $this->hasOne('pakets');
+    }
+ 
 }

@@ -17,6 +17,7 @@ class PaketController extends Controller
     public function store(Request $request){
         $data = new PaketModel();
         $data->jenis_konsultasi = $request -> input('jenis_konsultasi');
+        $data->id_user = $request -> input('id_user');
         $data->save();
         return response('Data paket berhasil ditambahkan');
     }
