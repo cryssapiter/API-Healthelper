@@ -37,3 +37,10 @@ $router->get('/artikel/{id_artikel}', 'artikelController@show');
 $router->post('/artikel', 'artikelController@store');
 $router->put('/artikel/{id_artikel}', 'artikelController@update');
 $router->delete('/artikel/{id_artikel}', 'artikelController@destroy');
+
+// CRUD pada tabel psikolog
+$router->get('/psikolog', 'psikologController@index');
+$router->get('/psikolog/{id_psikolog}', 'psikologController@show');
+$router->post('/psikolog', 'psikologController@store');
+$router->put('/psikolog/{id_psikolog}', 'psikologController@update');
+$router->delete('/psikolog/{id_psikolog}', 'psikologController@destroy');
