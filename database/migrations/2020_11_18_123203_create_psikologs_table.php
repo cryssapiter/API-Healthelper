@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateArticlesTable extends Migration
+class CreatePsikologsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateArticlesTable extends Migration
      */
     public function up()
     {
-        Schema::create('articles', function (Blueprint $table) {
-            $table_engine = 'InnoDB';
-            $table->bigIncrements('id_artikel');
-            $table->string('tema_artikel',200);
-            $table->longText('isi_artikel');
+        Schema::create('psikologs', function (Blueprint $table) {
+            $table->increments('id_psikolog');
+            $table->string('nama_psikolog', 100);
+            $table->string('tahun_psikolog');
+            $table->longText('deskripsi_psikolog');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateArticlesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('articles');
+        Schema::dropIfExists('psikologs');
     }
 }
