@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTablePaket extends Migration
+class CreateOrdersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateTablePaket extends Migration
      */
     public function up()
     {
-        Schema::create('pakets', function (Blueprint $table) {
-            $table->increments('id_paket');
-            $table->string('nama_paket');
-            $table->string('jenis_paket');
-            $table->integer('harga_paket');
+        Schema::create('orders', function (Blueprint $table) {
+            $table_engine = 'InnoDB';
+            $table->increments('id_orders');
+            $table->integer('id_user')->unsigned();
+            $table->integer('id_paket')->unsigned();
+            $table->integer('id_psikolog')->unsigned();
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateTablePaket extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pakets');
+        Schema::dropIfExists('orders');
     }
 }
