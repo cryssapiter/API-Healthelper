@@ -26,7 +26,11 @@ class UserModel extends Model implements AuthenticatableContract, AuthorizableCo
     ];
 
     public function pakets(){
-        return $this->hasOne('pakets');
+        return $this->hasMany('App\Models\PaketModel','id_paket');
+    }
+
+    public function orders(){
+        return $this->hasOne('App\Models\BookingModel','id_booking');
     }
  
 }

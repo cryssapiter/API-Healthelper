@@ -29,7 +29,7 @@ class AuthController extends Controller
  
         $data = [
             "email_user" => $email,
-            "password_user" => $has,
+            "password_user" => $hashPwd,
             "alamat_user" => $alamat,
             "nama_user" => $nama,
             "no_hp_user" => $no_hp
