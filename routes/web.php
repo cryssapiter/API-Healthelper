@@ -24,12 +24,9 @@ $router->post("/login", "AuthController@login");
 // Route untuk mengakses token
 $router->get("/user", "UserController@index"); 
 
-// CRUD pada tabel paket
+// Read pada tabel paket
 $router->get("/pakets", "PaketController@index");
 $router->get("/pakets/{id_paket}", "PaketController@show");
-$router->post("/pakets", "PaketController@store");
-$router->put("/pakets/{id_paket}", "PaketController@update");
-$router->delete("/pakets/{id_paket}", "PaketController@destroy");
 
 // CRUD pada tabel articles
 $router->get('/artikel', 'artikelController@index');
@@ -44,3 +41,10 @@ $router->get('/psikolog/{id_psikolog}', 'psikologController@show');
 $router->post('/psikolog', 'psikologController@store');
 $router->put('/psikolog/{id_psikolog}', 'psikologController@update');
 $router->delete('/psikolog/{id_psikolog}', 'psikologController@destroy');
+
+// CRUD pada tabel order
+$router->get('/order', 'orderController@index');
+$router->get('/order/{id_order}', 'orderController@show');
+$router->post('/order', 'orderController@store');
+$router->put('/order/{id_order}', 'orderController@update');
+$router->delete('/order/{id_order}', 'orderController@destroy');

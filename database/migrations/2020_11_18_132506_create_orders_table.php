@@ -14,11 +14,12 @@ class CreateOrdersTable extends Migration
     public function up()
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table_engine = 'InnoDB';
-            $table->increments('id_orders');
-            $table->integer('id_user')->unsigned();
-            $table->integer('id_paket')->unsigned();
-            $table->integer('id_psikolog')->unsigned();
+            // $table_engine = 'InnoDB';
+            $table->increments('id_order');
+            $table->integer('id_user')->nullable();
+            $table->integer('id_paket')->nullable();
+            $table->integer('id_psikolog')->nullable();
+            $table->string('tgl_booking');
             $table->timestamps();
         });
     }

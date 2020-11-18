@@ -9,24 +9,24 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Lumen\Auth\Authorizable;
 
-class PaketModel extends Model implements AuthenticatableContract, AuthorizableContract
+class orderModel extends Model implements AuthenticatableContract, AuthorizableContract
 {
     use Authenticatable, Authorizable;
     
-    protected $table = 'pakets';
-    protected $primaryKey = 'id_paket';
+    protected $table = 'orders';
+    protected $primaryKey = 'id_order';
     public $timestamps = false;
 
-    public function users(){
-        return $this->belongsTo('user::class');
+    public function user(){
+        return $this->hasOne('user::class');
     }
 
-    public function orders(){
-        return $this->belongsTo('orders::class');
+    public function paket(){
+        return $this->belongsTo('paket::class');
     }
 
-    public function psikologs(){
-        return $this->belongsTo('psikologs::class');
+    public function psikolog(){
+        return $this->belongsTo('psikolog::class');
     }
  
 }

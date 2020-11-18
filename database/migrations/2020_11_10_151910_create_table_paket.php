@@ -15,6 +15,9 @@ class CreateTablePaket extends Migration
     {
         Schema::create('pakets', function (Blueprint $table) {
             $table->increments('id_paket');
+            $table->integer('id_user')->nullable();
+            $table->integer('id_psikolog')->nullable();
+            $table->integer('id_order')->nullable();
             $table->string('nama_paket');
             $table->string('jenis_paket');
             $table->integer('harga_paket');
