@@ -16,6 +16,9 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+$router->get('/key', function() {
+    return \Illuminate\Support\Str::random(32);
+});
 
 // Fitur register dan login
 $router->post("/register", "AuthController@register");
@@ -25,6 +28,7 @@ $router->post("/login", "AuthController@login");
 $router->get("/user", "UserController@index"); 
 
 // Read pada tabel paket
+$router->post('/pakets', 'PaketController@store');
 $router->get("/pakets", "PaketController@index");
 $router->get("/pakets/{id_paket}", "PaketController@show");
 
